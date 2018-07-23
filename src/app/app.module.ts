@@ -6,12 +6,19 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment'
+import { AppRoutingModule } from './app-routing.module';
+import { MatCardModule, MatButtonModule } from '@angular/material';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { MainpageComponent } from './mainpage/mainpage.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainpageComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -20,7 +27,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AngularFireStorageModule,
     AngularFireAuthModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule, MatButtonModule
   ],
   bootstrap: [AppComponent]
 })
