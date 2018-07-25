@@ -1,13 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-card>
+<mat-card class="header">
   Navigation here
   <button mat-button routerLink="/">Home</button>
   <button mat-button routerLink="/dashboard">Dashboard</button>
   <button mat-button routerLink="/login">Login</button>
 </mat-card>
-<router-outlet></router-outlet>
-<footer>
-  Footer here
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<footer class="footer-container">
+  <div class="footer-content">Smart Lock Access Control System</div>
+  <div class="footer-content">Created and programmed by Wan Akashah and Iman Fitri</div>
+  <div class="footer-content">Currrent Version: 0.0.1</div>
 </footer>
 <!-- <div style="text-align:center">
 <ul>

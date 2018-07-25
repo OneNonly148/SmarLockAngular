@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+}
+.content-container{
+  content: "";
+  clear: both;
+  display: table;
+  width:100%;
+}
+.sidemenu{
+  float:left;
+  width: 30%;
+  padding: 20px;
+}
+.content{
+  float: left;
+  width: 65%;
+  padding: 20px;
+}
+.sidenav-menu{
+  display: block;
+  width: 100%;
+}
