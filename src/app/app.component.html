@@ -1,9 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-card class="header">
-  Navigation here
-  <button mat-button routerLink="/">Home</button>
-  <button mat-button routerLink="/dashboard">Dashboard</button>
-  <button mat-button routerLink="/login">Login</button>
+  <button mat-button routerLink="/"><img class="img" src="/assets/img/doge.png" width="50px" height="50px"/> Home</button>
+  <button mat-button *ngIf="loggedIn" routerLink="/dashboard">Dashboard</button>
+  <button mat-button *ngIf="loggedIn; else elseBlock" (click)="logOut()">Logout</button>
+  <ng-template #elseBlock>
+    <button mat-button routerLink="/login">Login</button>
+  </ng-template>
 </mat-card>
 <div class="container">
   <router-outlet></router-outlet>

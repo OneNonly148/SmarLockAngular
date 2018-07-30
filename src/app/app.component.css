@@ -1,14 +1,18 @@
 .header{
   background-color: #808080;
+  vertical-align: middle;
 }
 .container{
+  text-align: center;
   padding: 1.5%;
   width:100%;
 }
 .footer-container{
+  text-align: center;
   background-color: #808080;
 }
 .footer-content{
+  text-align: center;
   display: inline-block;
   padding: 2.5%;
 }

@@ -7,7 +7,9 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment'
 import { AppRoutingModule } from './app-routing.module';
-import { MatCardModule, MatButtonModule, MatSidenavModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule, MatButtonModule, MatSidenavModule, MatInputModule,
+          MatFormFieldModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { LoginComponent } from './login/login.component';
@@ -27,8 +29,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AngularFireStorageModule,
     AngularFireAuthModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    MatCardModule, MatButtonModule, MatSidenavModule
+    MatCardModule, MatButtonModule, MatSidenavModule, MatInputModule,
+    MatFormFieldModule
   ],
   bootstrap: [AppComponent]
 })
