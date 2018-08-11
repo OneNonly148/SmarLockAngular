@@ -9,7 +9,7 @@ import { environment } from '../environments/environment'
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule, MatButtonModule, MatSidenavModule, MatInputModule,
-          MatFormFieldModule } from '@angular/material';
+          MatFormFieldModule, MatGridListModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { LoginComponent } from './login/login.component';
@@ -33,7 +33,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReactiveFormsModule,
     AppRoutingModule,
     MatCardModule, MatButtonModule, MatSidenavModule, MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule, MatGridListModule
   ],
   bootstrap: [AppComponent]
 })

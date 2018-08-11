@@ -4,7 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { auth } from 'firebase';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from '../app.component';
-
+import { AngularFirestore } from 'angularfire2/firestore';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,12 +18,14 @@ export class LoginComponent implements OnInit {
     public router: Router,
     public route: ActivatedRoute,
     public sideBar: AppComponent,
+    private db: AngularFirestore,
   ) { }
 
   ngOnInit() {
     this.login = this._formBuilder.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      admin: [false]
     });
   }
 
@@ -55,6 +57,7 @@ export class LoginComponent implements OnInit {
     .then((data) => {
           console.log(data.user);
           console.log("Successful sign up");
+          this.db.collection('users').doc(data.user.uid).set({email: this.login.value.email,admin: this.login.value.admin});
           this.router.navigate(['/dashboard', {id: data.user.uid} ]);
         })
         .catch((error) => {

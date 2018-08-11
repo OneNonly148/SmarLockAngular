@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 import { DataLog } from '../app/datalog';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -13,16 +13,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AppComponent {
   items: DataLog[];
-  data: Observable<any[]>
+  data: any;
   loggedIn: boolean = false;
   user: any;
+  private itemDoc: AngularFirestoreDocument<any[]>;
   constructor(
     private db: AngularFirestore,
     public fbAuth: AngularFireAuth,
     public router: Router,
     public route: ActivatedRoute,
-  ){
-  }
+  ){}
   ngOnInit(){
     this.getDatas();
   }
@@ -40,9 +40,15 @@ export class AppComponent {
       console.log(this.loggedIn);
     };
   }
+
+  dashboard(){
+    this.router.navigate(['/dashboard', {id: this.user.uid}]);
+  }
+
   logOut(){
     console.log("Logging Out");
     this.fbAuth.auth.signOut();
+    this.loggedIn = false;
     this.router.navigate(['/login']);
   }
 }

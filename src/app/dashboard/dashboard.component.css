@@ -4,6 +4,7 @@
   padding: 20px;
 }
 .sidenav-menu{
+  text-align: left;
   display: block;
   width: 100%;
 }
