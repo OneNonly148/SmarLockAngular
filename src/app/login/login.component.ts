@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           console.log(data.user);
           console.log("Successful sign up");
           this.db.collection('users').doc(data.user.uid).set({email: this.login.value.email,admin: this.login.value.admin});
-          this.router.navigate(['/dashboard', {id: data.user.uid} ]);
+          this.router.navigate(['/register', {id: data.user.uid} ]);
         })
         .catch((error) => {
         var errorCode = error.code;

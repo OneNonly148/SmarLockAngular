@@ -2,16 +2,66 @@
   <div class="sidemenu">
     <mat-sidenav-container>
       <mat-sidenav-content>
-        <button mat-button class="sidenav-menu">Click this for the admin content</button>
-        <button mat-button class="sidenav-menu">Click this for the admin page</button>
-        <button mat-button class="sidenav-menu">Click this to the admin page</button>
+        <button mat-button class="sidenav-menu"><i class="material-icons">dashboard</i> Dashboard</button>
+        <button mat-button class="sidenav-menu"><i class="material-icons">assignment_ind</i> Users</button>
+        <button mat-button class="sidenav-menu"><i class="material-icons">lock</i> Devices</button>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
   <div class="content">
-    <h1>Statistics</h1>
-    <hr>
-    <h1>Admin Content</h1>
+    <div class="content-stat">
+      <div class="stat">
+        <i class="material-icons">lock</i> Devices
+        <br>
+        <h1>0</h1>
+      </div>
+      <div class="stat">
+        <i class="material-icons">check_circle</i> Active
+        <br>
+        <h1>0</h1>
+      </div>
+      <div class="stat">
+        <i class="material-icons">update</i> Update
+        <br>
+        <h1>0</h1>
+      </div>
+      <div class="stat">
+        <i class="material-icons">offline_bolt</i> Offline
+        <br>
+        <h1>0</h1>
+      </div>
+    </div>
+    <br><hr><br>
+    <mat-card>
+      <mat-paginator [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+      <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.date }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="device">
+          <mat-header-cell *matHeaderCellDef> Device </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.device }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+          <mat-cell *matCellDef="let element">{{ element.status }}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card>
   </div>
 </div>
 <ng-template #elseBlock>
@@ -19,21 +69,66 @@
     <div class="sidemenu">
       <mat-sidenav-container>
         <mat-sidenav-content>
-          <button mat-button class="sidenav-menu">Click this for the main content</button>
-          <button mat-button class="sidenav-menu">Click this for the order page</button>
-          <button mat-button class="sidenav-menu">Click this to the quotation page</button>
+          <button mat-button class="sidenav-menu"><i class="material-icons">dashboard</i> Dashboard</button>
+          <button mat-button class="sidenav-menu"><i class="material-icons">assignment_ind</i> Devices</button>
+          <button mat-button class="sidenav-menu"><i class="material-icons">lock</i> Don't Click</button>
         </mat-sidenav-content>
       </mat-sidenav-container>
     </div>
     <div class="content">
-      <mat-grid-list cols="4" rowHeight="2:1">
-        <mat-grid-tile>Devices</mat-grid-tile>
-        <mat-grid-tile>Active</mat-grid-tile>
-        <mat-grid-tile>Require Update</mat-grid-tile>
-        <mat-grid-tile>Offline</mat-grid-tile>
-      </mat-grid-list>
-      <hr>
-      <h1>Regular Content</h1>
+      <div class="content-stat">
+        <div class="stat">
+          <i class="material-icons">lock</i> Devices
+          <br>
+          <h1>0</h1>
+        </div>
+        <div class="stat">
+          <i class="material-icons">check_circle</i> Active
+          <br>
+          <h1>0</h1>
+        </div>
+        <div class="stat">
+          <i class="material-icons">update</i> Update
+          <br>
+          <h1>0</h1>
+        </div>
+        <div class="stat">
+          <i class="material-icons">offline_bolt</i> Offline
+          <br>
+          <h1>0</h1>
+        </div>
+      </div>
+      <br><hr><br>
+      <mat-card>
+        <mat-paginator [length]="100"
+          [pageSize]="10"
+          [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.id }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.date }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="device">
+            <mat-header-cell *matHeaderCellDef> Device </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.device }}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+            <mat-cell *matCellDef="let element">{{ element.status }}</mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </mat-card>
     </div>
   </div>
 </ng-template>

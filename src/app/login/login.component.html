@@ -1,13 +1,15 @@
 
 <div class="container">
-  <img class="img" src="/assets/img/doge.png" width="100px" height="100px"/>
+  <img class="img" src="/assets/img/doge.png"/>
+  <h1>Sign In</h1>
   <form [formGroup]="login">
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="inputs">
       <input matInput placeholder="Email" formControlName="email"/>
     </mat-form-field><br>
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="inputs">
       <input matInput type="password" placeholder="Password" formControlName="password"/>
     </mat-form-field><br>
-    <button mat-button (click)="logIn()">Login</button><button mat-button (click)="signUp()">Sign Up</button>
+    <button mat-button class="btn" (click)="logIn()">Login</button><br><br>
+    <button mat-button class="btn" (click)="signUp()">Sign Up</button>
   </form>
 </div>
